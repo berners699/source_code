@@ -415,9 +415,9 @@ const GamesPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-slate-950 pb-20">
+    <div className="min-h-screen bg-slate-50 pb-20">
       {/* Game Selection Bar */}
-      <div className="bg-slate-900 border-b border-slate-800 sticky top-16 z-20 overflow-x-auto">
+      <div className="bg-slate-100 border-b border-slate-800 sticky top-16 z-20 overflow-x-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex gap-2 py-3 min-w-max">
           {GAMES.map((game) => (
             <button
@@ -428,8 +428,8 @@ const GamesPage = () => {
               }}
               className={`px-6 py-2 rounded-full text-sm font-bold transition-all flex items-center gap-2 border flex-1 justify-center ${
                 activeGameId === game.id
-                  ? `bg-gradient-to-r ${game.colors.primary} border-transparent text-white shadow-lg scale-105`
-                  : 'bg-transparent border-slate-700 text-slate-400 hover:border-slate-500 hover:text-slate-200 hover:bg-slate-800'
+                  ? `bg-linear-to-r ${game.colors.primary} border-transparent text-white shadow-lg scale-105`
+                  : 'bg-transparent border-slate-700 text-slate-400 hover:border-slate-500 hover:text-slate-200 hover:bg-slate-200'
               }`}
             >
               <Clock size={16} />
@@ -439,7 +439,7 @@ const GamesPage = () => {
         </div>
       </div>
       {/* Game Header Info */}
-      <div ref={gameSectionRef} className="bg-slate-900 border-b border-slate-800">
+      <div ref={gameSectionRef} className="bg-slate-100 border-b border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col lg:flex-row gap-8 items-center lg:items-start justify-between">
             {/* Left Side: Results */}
@@ -462,10 +462,10 @@ const GamesPage = () => {
                       className={`w-14 h-14 rounded-full flex items-center justify-center text-2xl font-bold text-yellow-300 shadow-lg transform hover:scale-110 transition-transform duration-200
                       ${
                         i === 0
-                          ? 'bg-gradient-to-br from-blue-500 to-blue-600'
+                          ? 'bg-linear-to-br from-blue-500 to-blue-600'
                           : i === 1
-                            ? 'bg-gradient-to-br from-purple-500 to-purple-600'
-                            : 'bg-gradient-to-br from-pink-500 to-pink-600'
+                            ? 'bg-linear-to-br from-purple-500 to-purple-600'
+                            : 'bg-linear-to-br from-pink-500 to-pink-600'
                       }`}
                     >
                       {num}
@@ -474,14 +474,14 @@ const GamesPage = () => {
                   </React.Fragment>
                 ))}
                 <span className="text-slate-500 text-2xl font-bold">=</span>
-                <div className="w-14 h-14 rounded-full flex items-center justify-center text-2xl font-bold text-white shadow-lg bg-gradient-to-br from-red-500 to-red-700 transform hover:scale-110 transition-transform duration-200">
+                <div className="w-14 h-14 rounded-full flex items-center justify-center text-2xl font-bold text-white shadow-lg bg-linear-to-br from-red-500 to-red-700 transform hover:scale-110 transition-transform duration-200">
                   10
                 </div>
               </div>
             </div>
 
             {/* Right Side: Timer */}
-            <div className="flex-shrink-0 w-full lg:w-auto flex flex-col items-center lg:items-end">
+            <div className="shrink-0 w-full lg:w-auto flex flex-col items-center lg:items-end">
               <div className="text-slate-400 mb-4 text-sm">
                 距离 第{' '}
                 <span className={`font-mono font-bold text-lg ${activeGame.colors.accent}`}>
@@ -502,7 +502,7 @@ const GamesPage = () => {
                   ) : (
                     <div
                       key={i}
-                      className="w-10 h-12 bg-slate-800 border border-orange-500/50 rounded-lg flex items-center justify-center text-2xl font-bold text-orange-500 shadow-[0_0_15px_rgba(249,115,22,0.2)] backdrop-blur-sm"
+                      className="w-10 h-12 bg-slate-200 border border-orange-500/50 rounded-lg flex items-center justify-center text-2xl font-bold text-orange-500 shadow-[0_0_15px_rgba(249,115,22,0.2)] backdrop-blur-xs"
                     >
                       {char}
                     </div>
@@ -532,7 +532,7 @@ const GamesPage = () => {
                   setShowBettingOverlay(false)
                   clearAll()
                 }}
-                className={`px-4 py-2 rounded-t-lg text-sm font-medium transition-all flex items-center gap-2 whitespace-nowrap relative top-[1px] ${
+                className={`px-4 py-2 rounded-t-lg text-sm font-medium transition-all flex items-center gap-2 whitespace-nowrap relative top-px ${
                   activeTab === tab.id
                     ? `text-white border-b-2 ${activeGame.colors.border} ${activeGame.colors.lightBg}`
                     : 'text-slate-400 hover:text-slate-200'
@@ -546,7 +546,7 @@ const GamesPage = () => {
         </div>
 
         {/* Tab Content */}
-        <div className="bg-slate-900 rounded-2xl border border-slate-800 overflow-hidden shadow-xl min-h-[400px]">
+        <div className="bg-slate-100 rounded-2xl border border-slate-800 overflow-hidden shadow-xl min-h-[400px]">
           {/* Past Results */}
           {activeTab === 'results' &&
             (showBettingOverlay ? (

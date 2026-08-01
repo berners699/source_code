@@ -17,11 +17,13 @@ A flexible, feature-rich React template designed for AI-generated websites with 
 ## 🛠️ Tech Stack
 
 ### Core Technologies
+
 - React 18.3.1 + TypeScript 5.8.3
 - Vite 7.0.0 (Build tool)
 - Tailwind CSS 3.4.17 (CSS framework)
 
 ### Feature Libraries
+
 - React Router DOM 6.30.1 (Routing)
 - Zustand 4.4.7 (State management)
 - i18next + react-i18next (Internationalization)
@@ -32,17 +34,21 @@ A flexible, feature-rich React template designed for AI-generated websites with 
 ## 🚀 Quick Start
 
 1. **Install dependencies**:
+
    ```bash
    npm install
    ```
 
 2. **Start development server**:
+
    ```bash
    npm run dev
    ```
+
    Visit http://localhost:5173 to view the application
 
 3. **Build for production**:
+
    ```bash
    npm run build
    ```
@@ -59,7 +65,7 @@ src/
 ├── api/             # API related code
 ├── assets/          # Static assets
 ├── components/      # Reusable components
-├── layouts/         # Layout components  
+├── layouts/         # Layout components
 ├── pages/           # Page components
 ├── styles/          # Style files
 ├── types/           # TypeScript type definitions
@@ -70,3 +76,14 @@ src/
 ## More Information
 
 For more detailed project structure, tech stack, configuration instructions and development guide, please refer to the [YOUWARE.md](./YOUWARE.md) file.
+
+### skin peeler
+
+- bg-slate-950 -> bg-slate-50
+- bg-slate-900 -> bg-slate-100
+- bg-slate-800 -> bg-slate-200
+- bg-slate-700 -> bg-slate-300
+- bg-slate-600 -> bg-slate-400
+
+- 背景颜色 --bg-color ：#f8f8f8
+-

@@ -1,64 +1,64 @@
-import React, { useState } from 'react';
-import GoldBean from './GoldBean';
-import { ShoppingBag, Gift, X } from 'lucide-react';
+import React, { useState } from 'react'
+import GoldBean from './GoldBean'
+import { ShoppingBag, Gift, X } from 'lucide-react'
 
 const products = [
   {
     id: 1,
-    name: "1千万金豆卡",
-    value: "￥100",
+    name: '1千万金豆卡',
+    value: '￥100',
     price: 10000000,
-    image: "/assets/aigc/images/card-gold-bean.png",
-    category: "金豆"
+    image: '/assets/aigc/images/card-gold-bean.png',
+    category: '金豆',
   },
   {
     id: 2,
-    name: "100元京东卡",
-    value: "￥100",
+    name: '100元京东卡',
+    value: '￥100',
     price: 10000000,
-    image: "/assets/aigc/images/card-jd.png",
-    category: "电商"
+    image: '/assets/aigc/images/card-jd.png',
+    category: '电商',
   },
   {
     id: 3,
-    name: "100元沃尔玛卡",
-    value: "￥100",
+    name: '100元沃尔玛卡',
+    value: '￥100',
     price: 10000000,
-    image: "/assets/aigc/images/card-walmart.png",
-    category: "商超"
+    image: '/assets/aigc/images/card-walmart.png',
+    category: '商超',
   },
   {
     id: 4,
-    name: "100元中石化卡",
-    value: "￥100",
+    name: '100元中石化卡',
+    value: '￥100',
     price: 10000000,
-    image: "/assets/aigc/images/card-sinopec.png",
-    category: "加油"
-  }
-];
+    image: '/assets/aigc/images/card-sinopec.png',
+    category: '加油',
+  },
+]
 
 const Mall = () => {
-  const [selectedProduct, setSelectedProduct] = useState<any>(null);
-  const [userPoints, setUserPoints] = useState(12580000); // Mock points
+  const [selectedProduct, setSelectedProduct] = useState<any>(null)
+  const [userPoints, setUserPoints] = useState(12580000) // Mock points
 
   const handleExchange = () => {
-    if (!selectedProduct) return;
+    if (!selectedProduct) return
 
     if (userPoints < selectedProduct.price) {
-      alert("金豆不足！");
-      return;
+      alert('金豆不足！')
+      return
     }
 
     // Deduct points
-    setUserPoints(prev => prev - selectedProduct.price);
-    
+    setUserPoints((prev) => prev - selectedProduct.price)
+
     // Close modal and show success (simple alert for now)
-    alert(`兑换成功！消耗了 ${selectedProduct.price.toLocaleString()} 金豆`);
-    setSelectedProduct(null);
-  };
+    alert(`兑换成功！消耗了 ${selectedProduct.price.toLocaleString()} 金豆`)
+    setSelectedProduct(null)
+  }
 
   return (
-    <section id="mall" className="py-16 bg-slate-950 relative overflow-hidden min-h-screen">
+    <section id="mall" className="py-16 bg-slate-50 relative overflow-hidden min-h-screen">
       {/* Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 -left-20 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl"></div>
@@ -74,10 +74,13 @@ const Mall = () => {
             </h2>
             <p className="text-gray-400 mt-2">玩游戏赚金豆，好礼免费换</p>
           </div>
-          
+
           <div className="flex items-center gap-4">
-            <div className="bg-slate-800 px-4 py-2 rounded-full flex items-center gap-2 border border-slate-700">
-              <span className="text-sm text-gray-300">我的金豆: <span className="text-white font-bold">{userPoints.toLocaleString()}</span></span>
+            <div className="bg-slate-200 px-4 py-2 rounded-full flex items-center gap-2 border border-slate-700">
+              <span className="text-sm text-gray-300">
+                我的金豆:{' '}
+                <span className="text-white font-bold">{userPoints.toLocaleString()}</span>
+              </span>
               <GoldBean className="w-4 h-4" />
             </div>
           </div>
@@ -85,14 +88,17 @@ const Mall = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {products.map((product) => (
-            <div key={product.id} className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 group flex flex-col shadow-lg hover:shadow-purple-500/10">
-              <div className="aspect-[4/3] p-4 bg-slate-800/30 flex items-center justify-center relative">
-                <img 
-                  src={product.image} 
-                  alt={product.name} 
+            <div
+              key={product.id}
+              className="bg-slate-100 border border-slate-800 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 group flex flex-col shadow-lg hover:shadow-purple-500/10"
+            >
+              <div className="aspect-4/3 p-4 bg-slate-200/30 flex items-center justify-center relative">
+                <img
+                  src={product.image}
+                  alt={product.name}
                   className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute top-4 right-4 bg-purple-600/90 backdrop-blur-sm text-[10px] font-bold px-2 py-0.5 rounded-full text-white uppercase tracking-wider">
+                <div className="absolute top-4 right-4 bg-purple-600/90 backdrop-blur-xs text-[10px] font-bold px-2 py-0.5 rounded-full text-white uppercase tracking-wider">
                   {product.category}
                 </div>
               </div>
@@ -103,7 +109,7 @@ const Mall = () => {
                     {product.price.toLocaleString()}
                     <GoldBean className="w-4 h-4" />
                   </div>
-                  <button 
+                  <button
                     onClick={() => setSelectedProduct(product)}
                     className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-xl text-sm font-bold transition-all active:scale-95 shadow-lg shadow-orange-500/20"
                   >
@@ -118,9 +124,9 @@ const Mall = () => {
 
       {/* Exchange Modal */}
       {selectedProduct && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-          <div className="bg-slate-900 border border-slate-700 rounded-2xl max-w-md w-full p-6 relative animate-in fade-in zoom-in duration-200">
-            <button 
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-xs">
+          <div className="bg-slate-100 border border-slate-700 rounded-2xl max-w-md w-full p-6 relative animate-in fade-in zoom-in duration-200">
+            <button
               onClick={() => setSelectedProduct(null)}
               className="absolute top-4 right-4 text-gray-400 hover:text-white"
             >
@@ -128,12 +134,12 @@ const Mall = () => {
             </button>
 
             <h3 className="text-xl font-bold text-white mb-6">确认兑换</h3>
-            
-            <div className="flex items-center gap-4 mb-6 bg-slate-800/50 p-4 rounded-xl">
-              <img 
-                src={selectedProduct.image} 
-                alt={selectedProduct.name} 
-                className="w-20 h-20 object-cover rounded-lg bg-slate-800"
+
+            <div className="flex items-center gap-4 mb-6 bg-slate-200/50 p-4 rounded-xl">
+              <img
+                src={selectedProduct.image}
+                alt={selectedProduct.name}
+                className="w-20 h-20 object-cover rounded-lg bg-slate-200"
               />
               <div>
                 <h4 className="font-bold text-white">{selectedProduct.name}</h4>
@@ -162,7 +168,11 @@ const Mall = () => {
               <div className="border-t border-slate-700 pt-3 flex justify-between font-bold">
                 <span className="text-white">剩余金豆</span>
                 <div className="flex items-center gap-1">
-                  <span className={userPoints >= selectedProduct.price ? "text-green-400" : "text-red-400"}>
+                  <span
+                    className={
+                      userPoints >= selectedProduct.price ? 'text-green-400' : 'text-red-400'
+                    }
+                  >
                     {(userPoints - selectedProduct.price).toLocaleString()}
                   </span>
                   <GoldBean className="w-3 h-3" />
@@ -170,13 +180,13 @@ const Mall = () => {
               </div>
             </div>
 
-            <button 
+            <button
               onClick={handleExchange}
               disabled={userPoints < selectedProduct.price}
               className={`w-full py-3 rounded-xl font-bold transition-all ${
-                userPoints >= selectedProduct.price 
-                  ? 'bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-400 hover:to-red-500 text-white shadow-lg shadow-orange-500/25' 
-                  : 'bg-slate-800 text-gray-500 cursor-not-allowed'
+                userPoints >= selectedProduct.price
+                  ? 'bg-linear-to-r from-orange-500 to-red-600 hover:from-orange-400 hover:to-red-500 text-white shadow-lg shadow-orange-500/25'
+                  : 'bg-slate-200 text-gray-500 cursor-not-allowed'
               }`}
             >
               {userPoints >= selectedProduct.price ? '立即兑换' : '金豆不足'}
@@ -185,7 +195,7 @@ const Mall = () => {
         </div>
       )}
     </section>
-  );
-};
+  )
+}
 
-export default Mall;
+export default Mall
