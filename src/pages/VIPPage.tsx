@@ -170,7 +170,7 @@ const VIPPage = () => {
                   <MessageCircle className="text-blue-400 w-8 h-8" />
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-2">开通会员</h3>
+                <h3 className="text-2xl font-bold text-primary mb-2">开通会员</h3>
                 <p className="text-slate-400 mb-8 text-lg">联系客服QQ: 88888888</p>
 
                 <div className="w-full bg-slate-200/50 border border-slate-700 rounded-2xl p-6 mb-8">
@@ -194,9 +194,9 @@ const VIPPage = () => {
         )}
 
         {/* VIP Comparison Table */}
-        <div className="bg-slate-100/50 rounded-2xl border border-slate-800 overflow-hidden shadow-2xl">
-          <div className="p-4 border-b border-slate-800">
-            <h2 className="text-lg font-bold text-white flex items-center gap-2">
+        <div className="bg-slate-100/50 rounded-2xl border border-slate-800/10 overflow-hidden shadow-2xl">
+          <div className="p-4 border-b border-slate-800/30">
+            <h2 className="text-lg font-bold text-primary flex items-center gap-2">
               <Shield className="text-blue-400" size={20} /> VIP 特权对比
             </h2>
           </div>
@@ -212,7 +212,7 @@ const VIPPage = () => {
                   ))}
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-800">
+              <tbody>
                 <tr className="hover:bg-white/5 transition-colors">
                   <td className="p-3 text-slate-400">单价</td>
                   {benefits.map((b) => (

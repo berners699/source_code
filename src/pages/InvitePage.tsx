@@ -93,9 +93,9 @@ const InvitePage = () => {
         return (
           <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
             {/* Combined Invite & Rules Card */}
-            <div className="bg-slate-200/80 backdrop-blur-md rounded-2xl border border-slate-700 shadow-xl overflow-hidden">
+            <div className="bg-slate-200/80 backdrop-blur-md rounded-2xl shadow-xl overflow-hidden">
               {/* Invite Link Section */}
-              <div className="p-6 border-b border-slate-700/50 relative overflow-hidden group">
+              <div className="p-6 relative overflow-hidden group">
                 <div className="absolute -top-16 -right-16 w-32 h-32 bg-yellow-500/10 rounded-full blur-2xl group-hover:bg-yellow-500/20 transition-all duration-500"></div>
                 <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
                   <div className="flex-1 w-full">
@@ -280,16 +280,16 @@ const InvitePage = () => {
       default:
         const currentItem = menuItems.find((item) => item.id === activeMenu)
         return (
-          <div className="bg-slate-200/50 backdrop-blur-md rounded-3xl p-20 border border-slate-700 text-center animate-in fade-in slide-in-from-bottom-4 duration-500 relative overflow-hidden">
+          <div className="bg-slate-200/50 backdrop-blur-md rounded-3xl p-20 text-center animate-in fade-in slide-in-from-bottom-4 duration-500 relative overflow-hidden">
             <div
               className={`absolute top-0 left-0 w-full h-1 bg-linear-to-r ${currentItem?.color}`}
             ></div>
             <div
-              className={`w-32 h-32 rounded-3xl bg-linear-to-br ${currentItem?.color} flex items-center justify-center mx-auto mb-10 text-white shadow-2xl shadow-current/20 rotate-3 hover:rotate-0 transition-transform duration-500`}
+              className={`w-32 h-32 rounded-3xl bg-linear-to-br ${currentItem?.color} flex items-center justify-center mx-auto mb-10 text-primary shadow-2xl shadow-current/20 rotate-3 hover:rotate-0 transition-transform duration-500`}
             >
               {currentItem && <currentItem.icon size={64} />}
             </div>
-            <h3 className="text-4xl font-black text-white mb-6">{currentItem?.label}</h3>
+            <h3 className="text-4xl font-black text-primary mb-6">{currentItem?.label}</h3>
             <p className="text-xl text-gray-400 max-w-lg mx-auto leading-relaxed">
               该板块内容正在火热筹备中！我们将为您带来更丰厚的福利与奖励，敬请期待。
             </p>
@@ -318,8 +318,8 @@ const InvitePage = () => {
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Left Sidebar Menu */}
           <div className="w-full lg:w-80 shrink-0">
-            <div className="bg-slate-200/80 backdrop-blur-md rounded-3xl border border-slate-700 overflow-hidden sticky top-24 shadow-2xl">
-              <div className="p-6 border-b border-slate-700 bg-linear-to-r from-slate-900 to-slate-800">
+            <div className="bg-slate-200/80 backdrop-blur-md rounded-3xl overflow-hidden sticky top-24 shadow-2xl">
+              <div className="p-6 bg-linear-to-r from-slate-900 to-slate-800">
                 <h2 className="text-lg font-black text-white uppercase tracking-widest flex items-center gap-2">
                   <Gift className="text-yellow-500" /> 奖励中心
                 </h2>
@@ -333,7 +333,7 @@ const InvitePage = () => {
                       w-full flex items-center justify-between px-5 py-4 rounded-2xl transition-all group relative overflow-hidden
                       ${
                         activeMenu === item.id
-                          ? 'bg-slate-100 text-white border border-slate-700 shadow-xl'
+                          ? 'bg-slate-100 text-white shadow-xl'
                           : 'text-gray-400 hover:bg-slate-300/30 hover:text-gray-200'
                       }
                     `}
@@ -350,14 +350,14 @@ const InvitePage = () => {
                         ${
                           activeMenu === item.id
                             ? `bg-linear-to-br ${item.color} text-white shadow-lg shadow-current/20 scale-110`
-                            : 'bg-slate-300/50 text-gray-500 group-hover:bg-slate-300 group-hover:text-gray-400'
+                            : 'bg-slate-300/50 text-gray-500 group-hover:bg-slate-300 group-hover:text-primary'
                         }
                       `}
                       >
                         <item.icon size={20} />
                       </div>
                       <span
-                        className={`font-bold transition-colors ${activeMenu === item.id ? 'text-white' : 'group-hover:text-gray-200'}`}
+                        className={`font-bold transition-colors ${activeMenu === item.id ? 'text-primary' : 'group-hover:text-primary'}`}
                       >
                         {item.label}
                       </span>

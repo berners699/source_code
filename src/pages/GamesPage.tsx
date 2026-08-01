@@ -16,15 +16,15 @@ import {
   ArrowLeft,
   X,
 } from 'lucide-react'
-import GoldBean from '../components/GoldBean'
+import GoldBean from '@/components/GoldBean'
 
 // Import sub-components
-import PastResults from '../components/games/PastResults'
-import BettingRecords from '../components/games/BettingRecords'
-import BettingMode from '../components/games/BettingMode'
-import AutoBet from '../components/games/AutoBet'
-import GameTrend from '../components/games/GameTrend'
-import GameRules from '../components/games/GameRules'
+import PastResults from '@/components/games/PastResults'
+import BettingRecords from '@/components/games/BettingRecords'
+import BettingMode from '@/components/games/BettingMode'
+import AutoBet from '@/components/games/AutoBet'
+import GameTrend from '@/components/games/GameTrend'
+import GameRules from '@/components/games/GameRules'
 
 // Game Configuration
 const ALL_ODDS = [
@@ -417,7 +417,7 @@ const GamesPage = () => {
   return (
     <div className="min-h-screen bg-slate-50 pb-20">
       {/* Game Selection Bar */}
-      <div className="bg-slate-100 border-b border-slate-800 sticky top-16 z-20 overflow-x-auto">
+      <div className="bg-slate-100 sticky top-16 z-20 overflow-x-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex gap-2 py-3 min-w-max">
           {GAMES.map((game) => (
             <button
@@ -429,7 +429,7 @@ const GamesPage = () => {
               className={`px-6 py-2 rounded-full text-sm font-bold transition-all flex items-center gap-2 border flex-1 justify-center ${
                 activeGameId === game.id
                   ? `bg-linear-to-r ${game.colors.primary} border-transparent text-white shadow-lg scale-105`
-                  : 'bg-transparent border-slate-700 text-slate-400 hover:border-slate-500 hover:text-slate-200 hover:bg-slate-200'
+                  : 'bg-transparent text-slate-400 hover:text-primary'
               }`}
             >
               <Clock size={16} />
@@ -439,7 +439,7 @@ const GamesPage = () => {
         </div>
       </div>
       {/* Game Header Info */}
-      <div ref={gameSectionRef} className="bg-slate-100 border-b border-slate-800">
+      <div ref={gameSectionRef} className="bg-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col lg:flex-row gap-8 items-center lg:items-start justify-between">
             {/* Left Side: Results */}
@@ -450,7 +450,8 @@ const GamesPage = () => {
                     【{activeGame.name}】
                   </span>
                   <span>
-                    第 <span className="text-white font-mono">3161903</span> 期 结果
+                    第 <span className="text-active-primay-background font-mono">3161903</span> 期
+                    结果
                   </span>
                 </div>
                 <div className="font-mono text-slate-500">服务器时间: 2026-01-20 15:51:51</div>
@@ -483,10 +484,10 @@ const GamesPage = () => {
             {/* Right Side: Timer */}
             <div className="shrink-0 w-full lg:w-auto flex flex-col items-center lg:items-end">
               <div className="text-slate-400 mb-4 text-sm">
-                距离 第{' '}
+                距离 第
                 <span className={`font-mono font-bold text-lg ${activeGame.colors.accent}`}>
                   3161904
-                </span>{' '}
+                </span>
                 期 开奖剩
               </div>
 
@@ -502,7 +503,7 @@ const GamesPage = () => {
                   ) : (
                     <div
                       key={i}
-                      className="w-10 h-12 bg-slate-200 border border-orange-500/50 rounded-lg flex items-center justify-center text-2xl font-bold text-orange-500 shadow-[0_0_15px_rgba(249,115,22,0.2)] backdrop-blur-xs"
+                      className="w-10 h-12 bg-slate-200 border-orange-500/50 rounded-lg flex items-center justify-center text-2xl font-bold text-orange-500 shadow-[0_0_15px_rgba(249,115,22,0.2)] backdrop-blur-xs"
                     >
                       {char}
                     </div>
@@ -521,7 +522,7 @@ const GamesPage = () => {
       </div>
       {/* Tab Navigation */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <div className="flex gap-2 overflow-x-auto pb-2 mb-6 border-b border-slate-800">
+        <div className="flex gap-2 overflow-x-auto pb-2 mb-6">
           {TABS.map((tab) => {
             const Icon = tab.icon
             return (
@@ -534,8 +535,8 @@ const GamesPage = () => {
                 }}
                 className={`px-4 py-2 rounded-t-lg text-sm font-medium transition-all flex items-center gap-2 whitespace-nowrap relative top-px ${
                   activeTab === tab.id
-                    ? `text-white border-b-2 ${activeGame.colors.border} ${activeGame.colors.lightBg}`
-                    : 'text-slate-400 hover:text-slate-200'
+                    ? `text-primary border-b-2 ${activeGame.colors.border} ${activeGame.colors.lightBg}`
+                    : 'text-slate-400 hover:text-primary'
                 }`}
               >
                 <Icon size={16} />
@@ -546,7 +547,7 @@ const GamesPage = () => {
         </div>
 
         {/* Tab Content */}
-        <div className="bg-slate-100 rounded-2xl border border-slate-800 overflow-hidden shadow-xl min-h-[400px]">
+        <div className="bg-slate-100 rounded-2xl overflow-hidden shadow-xl min-h-100">
           {/* Past Results */}
           {activeTab === 'results' &&
             (showBettingOverlay ? (

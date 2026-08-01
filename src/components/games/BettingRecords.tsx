@@ -92,11 +92,11 @@ const BettingRecords: React.FC<BettingRecordsProps> = ({ activeGame }) => {
               <th className="p-4 whitespace-nowrap text-center">操作</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-slate-800">
+          <tbody>
             {records.map((record, i) => (
-              <tr key={i} className="hover:bg-slate-200/30 transition-colors text-slate-300">
+              <tr key={i} className="hover:bg-slate-200/30 transition-colors text-slate-400">
                 <td className="p-4 text-center font-mono">{record.issue}</td>
-                <td className="p-4 text-center font-mono text-slate-400">{record.time}</td>
+                <td className="p-4 text-center font-mono">{record.time}</td>
                 <td className="p-4 text-center">
                   <div className="flex justify-center">
                     <span
@@ -130,7 +130,7 @@ const BettingRecords: React.FC<BettingRecordsProps> = ({ activeGame }) => {
       </div>
 
       {/* Pagination */}
-      <div className="flex items-center justify-center gap-4 p-6 border-t border-slate-800">
+      <div className="flex items-center justify-center gap-4 p-6">
         <button className="p-1 text-slate-600 hover:text-slate-400 transition-colors">
           <ChevronLeft size={20} />
         </button>

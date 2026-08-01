@@ -3,7 +3,7 @@ import banner from '@/assets/default/banner.png'
 
 const Hero = () => {
   return (
-    <div className="relative h-[500px] w-full overflow-hidden">
+    <div className="relative h-125 w-full overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img src={banner} alt="Hero Banner" className="w-full h-full object-cover" />

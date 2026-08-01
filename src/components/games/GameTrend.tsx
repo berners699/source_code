@@ -23,7 +23,7 @@ const GameTrend: React.FC<GameTrendProps> = ({
           <button
             key={count}
             onClick={() => setTrendIssues(count)}
-            className={`px-6 py-2 rounded-xl text-sm font-bold transition-all border ${trendIssues === count ? `bg-linear-to-r ${activeGame.colors.primary} border-transparent text-white shadow-lg` : 'bg-slate-200 border-slate-700 text-slate-400 hover:bg-slate-300'}`}
+            className={`px-6 py-2 rounded-xl text-sm font-bold transition-all ${trendIssues === count ? `bg-linear-to-r ${activeGame.colors.primary} text-white shadow-lg` : 'bg-slate-200 text-slate-400 hover:bg-slate-300'}`}
           >
             {count}期
           </button>
@@ -32,7 +32,7 @@ const GameTrend: React.FC<GameTrendProps> = ({
 
       {/* Trend Table */}
       <div className="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-100/50">
-        <div className="min-w-[1098px]">
+        <div className="min-w-274.5">
           <table className="w-full text-center text-[10px] border-collapse">
             <thead className="bg-slate-200/50 text-slate-500">
               <tr className="h-14">
@@ -78,7 +78,7 @@ const GameTrend: React.FC<GameTrendProps> = ({
                 <th className="p-1 border border-slate-800 w-6">/5</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-800">
+            <tbody>
               {history.slice(0, 20).map((record, i) => {
                 const winNum = record.sum % 28
                 return (

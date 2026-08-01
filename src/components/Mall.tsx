@@ -68,18 +68,20 @@ const Mall = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between mb-12 gap-4">
           <div>
-            <h2 className="text-3xl font-bold text-white flex items-center gap-2">
+            <h2 className="text-3xl font-bold text-primary flex items-center gap-2">
               <ShoppingBag className="text-purple-500" />
               金豆商城
             </h2>
-            <p className="text-gray-400 mt-2">玩游戏赚金豆，好礼免费换</p>
+            <p className="text-slate-400 mt-2">玩游戏赚金豆，好礼免费换</p>
           </div>
 
           <div className="flex items-center gap-4">
             <div className="bg-slate-200 px-4 py-2 rounded-full flex items-center gap-2 border border-slate-700">
-              <span className="text-sm text-gray-300">
-                我的金豆:{' '}
-                <span className="text-white font-bold">{userPoints.toLocaleString()}</span>
+              <span className="text-sm text-primary">
+                我的金豆:
+                <span className="text-active-primay-background font-bold">
+                  {userPoints.toLocaleString()}
+                </span>
               </span>
               <GoldBean className="w-4 h-4" />
             </div>
@@ -90,7 +92,7 @@ const Mall = () => {
           {products.map((product) => (
             <div
               key={product.id}
-              className="bg-slate-100 border border-slate-800 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 group flex flex-col shadow-lg hover:shadow-purple-500/10"
+              className="bg-slate-100 border border-slate-200 rounded-2xl overflow-hidden hover:border-purple-300/50 transition-all duration-300 group flex flex-col shadow-lg hover:shadow-purple-500/10"
             >
               <div className="aspect-4/3 p-4 bg-slate-200/30 flex items-center justify-center relative">
                 <img
@@ -103,7 +105,7 @@ const Mall = () => {
                 </div>
               </div>
               <div className="p-6 flex-1 flex flex-col">
-                <h3 className="text-lg font-bold text-white mb-4">{product.name}</h3>
+                <h3 className="text-lg font-bold text-primary mb-4">{product.name}</h3>
                 <div className="mt-auto flex items-center justify-between">
                   <div className="text-orange-500 font-mono font-bold flex items-center gap-1.5">
                     {product.price.toLocaleString()}
@@ -133,7 +135,7 @@ const Mall = () => {
               <X size={24} />
             </button>
 
-            <h3 className="text-xl font-bold text-white mb-6">确认兑换</h3>
+            <h3 className="text-xl font-bold text-primary mb-6">确认兑换</h3>
 
             <div className="flex items-center gap-4 mb-6 bg-slate-200/50 p-4 rounded-xl">
               <img
@@ -142,7 +144,7 @@ const Mall = () => {
                 className="w-20 h-20 object-cover rounded-lg bg-slate-200"
               />
               <div>
-                <h4 className="font-bold text-white">{selectedProduct.name}</h4>
+                <h4 className="font-bold text-primary">{selectedProduct.name}</h4>
                 <div className="text-yellow-400 font-bold flex items-center gap-1 mt-1">
                   {selectedProduct.price.toLocaleString()}
                   <GoldBean className="w-4 h-4" />
@@ -154,7 +156,7 @@ const Mall = () => {
               <div className="flex justify-between text-gray-400">
                 <span>当前金豆</span>
                 <div className="flex items-center gap-1">
-                  <span className="text-white">{userPoints.toLocaleString()}</span>
+                  <span className="text-primary">{userPoints.toLocaleString()}</span>
                   <GoldBean className="w-3 h-3" />
                 </div>
               </div>
@@ -166,7 +168,7 @@ const Mall = () => {
                 </div>
               </div>
               <div className="border-t border-slate-700 pt-3 flex justify-between font-bold">
-                <span className="text-white">剩余金豆</span>
+                <span className="text-primary">剩余金豆</span>
                 <div className="flex items-center gap-1">
                   <span
                     className={

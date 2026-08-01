@@ -16,7 +16,7 @@ const AutoBet: React.FC<AutoBetProps> = ({
   return (
     <div className="p-4 lg:p-6 space-y-6">
       {/* Sub Tabs */}
-      <div className="flex gap-2 border-b border-slate-800 pb-4">
+      <div className="flex gap-2 pb-4">
         <button
           onClick={() => setAutoBetSubTab('bet')}
           className={`px-6 py-2 rounded-xl text-sm font-bold transition-all ${autoBetSubTab === 'bet' ? `bg-linear-to-r ${activeGame.colors.primary} text-white shadow-lg` : 'bg-slate-200 text-slate-400 hover:bg-slate-300'}`}
@@ -32,12 +32,12 @@ const AutoBet: React.FC<AutoBetProps> = ({
       </div>
 
       {/* Configuration Form */}
-      <div className="bg-slate-200/30 p-6 rounded-2xl border border-slate-700/50 space-y-6">
+      <div className="bg-slate-200/30 p-6 rounded-2xl border border-slate-200 space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-4">
             <div className="flex items-center gap-4">
               <label className="text-sm text-slate-400 w-24">起始模式:</label>
-              <select className="flex-1 bg-slate-100 border border-slate-700 rounded-xl px-4 py-2 text-sm text-white focus:outline-hidden focus:border-blue-500">
+              <select className="flex-1 bg-slate-100 border border-slate-400 rounded-xl px-4 py-2 text-sm text-slate-400 focus:outline-hidden focus:border-blue-500">
                 <option>请选择模式</option>
                 {savedModes.map((m) => (
                   <option key={m.id}>{m.name}</option>
@@ -49,7 +49,7 @@ const AutoBet: React.FC<AutoBetProps> = ({
               <input
                 type="text"
                 placeholder="请输入开始期数"
-                className="flex-1 bg-slate-100 border border-slate-700 rounded-xl px-4 py-2 text-sm text-white focus:outline-hidden focus:border-blue-500"
+                className="flex-1 bg-slate-100 border border-slate-400 rounded-xl px-4 py-2 text-sm text-slate-400 focus:outline-hidden focus:border-blue-500"
               />
             </div>
             <div className="flex items-center gap-4">
@@ -57,7 +57,7 @@ const AutoBet: React.FC<AutoBetProps> = ({
               <input
                 type="text"
                 placeholder="请输入投入期数"
-                className="flex-1 bg-slate-100 border border-slate-700 rounded-xl px-4 py-2 text-sm text-white focus:outline-hidden focus:border-blue-500"
+                className="flex-1 bg-slate-100 border border-slate-400 rounded-xl px-4 py-2 text-sm text-slate-400 focus:outline-hidden focus:border-blue-500"
               />
             </div>
           </div>
@@ -68,7 +68,7 @@ const AutoBet: React.FC<AutoBetProps> = ({
                 <label className="text-sm text-slate-400 w-24">金豆最小值:</label>
                 <input
                   type="text"
-                  className="flex-1 bg-slate-100 border border-slate-700 rounded-xl px-4 py-2 text-sm text-white focus:outline-hidden focus:border-blue-500"
+                  className="flex-1 bg-slate-100 border border-slate-400 rounded-xl px-4 py-2 text-sm text-slate-400 focus:outline-hidden focus:border-blue-500"
                 />
               </div>
               <p className="text-[10px] text-slate-500 ml-28">金豆余额小于该值即停止自动参与</p>
@@ -78,7 +78,7 @@ const AutoBet: React.FC<AutoBetProps> = ({
                 <label className="text-sm text-slate-400 w-24">金豆最大值:</label>
                 <input
                   type="text"
-                  className="flex-1 bg-slate-100 border border-slate-700 rounded-xl px-4 py-2 text-sm text-white focus:outline-hidden focus:border-blue-500"
+                  className="flex-1 bg-slate-100 border border-slate-400 rounded-xl px-4 py-2 text-sm text-slate-400 focus:outline-hidden focus:border-blue-500"
                 />
               </div>
               <p className="text-[10px] text-slate-500 ml-28">金豆余额大于该值即停止自动参与</p>
@@ -87,13 +87,13 @@ const AutoBet: React.FC<AutoBetProps> = ({
         </div>
 
         {autoBetSubTab === 'chase' && (
-          <div className="pt-4 border-t border-slate-800 space-y-4">
+          <div className="pt-4 space-y-4">
             <div className="flex items-center gap-4">
               <label className="text-sm text-slate-400 w-24">追加倍数:</label>
               <input
                 type="text"
                 placeholder="最高10倍"
-                className="w-48 bg-slate-100 border border-slate-700 rounded-xl px-4 py-2 text-sm text-white focus:outline-hidden focus:border-blue-500"
+                className="w-48 bg-slate-100 border border-slate-400 rounded-xl px-4 py-2 text-sm text-white focus:outline-hidden focus:border-blue-500"
               />
               <span className="text-xs text-slate-500">单期投入上限2亿金豆</span>
             </div>
@@ -101,16 +101,16 @@ const AutoBet: React.FC<AutoBetProps> = ({
               <div className="flex items-center gap-2">
                 <input
                   type="checkbox"
-                  className="w-4 h-4 rounded-sm border-slate-700 bg-slate-200 text-blue-500"
+                  className="w-4 h-4 rounded-sm border-slate-400 bg-slate-200 text-blue-500"
                 />
-                <span className="text-sm text-slate-300">停止自动追号</span>
+                <span className="text-sm text-slate-400">停止自动追号</span>
               </div>
               <div className="flex items-center gap-2">
                 <input
                   type="checkbox"
-                  className="w-4 h-4 rounded-sm border-slate-700 bg-slate-200 text-blue-500"
+                  className="w-4 h-4 rounded-sm border-slate-400 bg-slate-200 text-blue-500"
                 />
-                <span className="text-sm text-slate-300">从开始模式重新开始追号</span>
+                <span className="text-sm text-slate-400">从开始模式重新开始追号</span>
               </div>
             </div>
           </div>
@@ -126,7 +126,7 @@ const AutoBet: React.FC<AutoBetProps> = ({
       </div>
 
       {/* Task Table */}
-      <div className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-100/50">
+      <div className="overflow-hidden rounded-2xl bg-slate-100/50">
         <table className="w-full text-left text-sm">
           <thead className="bg-slate-200/50 text-slate-400">
             <tr>
@@ -137,7 +137,7 @@ const AutoBet: React.FC<AutoBetProps> = ({
               <th className="p-4">操作</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-slate-800">
+          <tbody>
             <tr className="text-slate-500 italic">
               <td colSpan={5} className="p-8 text-center">
                 暂无自动投注任务

@@ -68,7 +68,7 @@ const RankPage = () => {
           <img src={banner} alt="Rank Banner" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-slate-100/60"></div>
         </div>
-        <h1 className="text-4xl font-bold text-white z-10 flex items-center gap-3 drop-shadow-lg">
+        <h1 className="text-4xl font-bold text-primary z-10 flex items-center gap-3 drop-shadow-lg">
           <Trophy className="text-yellow-400 w-10 h-10" />
           排行榜
         </h1>
@@ -85,7 +85,7 @@ const RankPage = () => {
             className={`flex-1 py-4 rounded-xl font-bold text-lg transition-all shadow-lg ${
               activeTab === 'today'
                 ? 'bg-linear-to-r from-yellow-500 to-orange-500 text-white scale-105'
-                : 'bg-slate-200 text-gray-400 hover:bg-slate-300'
+                : 'bg-slate-200 text-primary hover:bg-slate-300'
             }`}
           >
             今日榜单
@@ -98,7 +98,7 @@ const RankPage = () => {
             className={`flex-1 py-4 rounded-xl font-bold text-lg transition-all shadow-lg ${
               activeTab === 'yesterday'
                 ? 'bg-linear-to-r from-blue-500 to-cyan-500 text-white scale-105'
-                : 'bg-slate-200 text-gray-400 hover:bg-slate-300'
+                : 'bg-slate-200 text-primary hover:bg-slate-300'
             }`}
           >
             昨日榜单
@@ -106,18 +106,18 @@ const RankPage = () => {
         </div>
 
         {/* Table */}
-        <div className="bg-slate-200/80 backdrop-blur-md rounded-2xl overflow-hidden border border-slate-700 shadow-2xl mb-6">
+        <div className="bg-slate-200/80 backdrop-blur-md rounded-2xl overflow-hidden border border-slate-300 shadow-2xl mb-6">
           <div className="overflow-x-auto">
             <table className="w-full text-left">
               <thead>
-                <tr className="bg-slate-100/50 text-gray-400 border-b border-slate-700">
+                <tr className="bg-slate-100/50 text-gray-400 border-b border-slate-300">
                   <th className="px-6 py-4 font-medium w-24 text-center">排名</th>
                   <th className="px-6 py-4 font-medium">用户</th>
                   <th className="px-6 py-4 font-medium text-right">赢豆</th>
                   <th className="px-6 py-4 font-medium text-right">奖励</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-700/50">
+              <tbody className="divide-y divide-slate-300/50">
                 {currentData.map((item) => (
                   <tr key={item.rank} className="hover:bg-slate-300/30 transition-colors">
                     <td className="px-6 py-4 text-center">

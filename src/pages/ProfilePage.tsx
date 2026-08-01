@@ -36,7 +36,7 @@ const ProfilePage = () => {
     <div className="pt-24 pb-12 min-h-screen bg-slate-50">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header / User Card */}
-        <div className="bg-slate-100/50 border border-slate-800 rounded-2xl p-8 mb-8 flex flex-col md:flex-row items-center gap-8 backdrop-blur-xs relative overflow-hidden">
+        <div className="bg-slate-100/50 rounded-2xl p-8 mb-8 flex flex-col md:flex-row items-center gap-8 backdrop-blur-xs relative overflow-hidden">
           {/* Background Glow */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-yellow-500/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
 
@@ -96,14 +96,14 @@ const ProfilePage = () => {
           </div>
 
           <div className="flex gap-4">
-            <div className="text-center px-6 py-3 bg-slate-200/50 rounded-xl border border-slate-700">
+            <div className="text-center px-6 py-3 bg-slate-200/50 rounded-xl ">
               <div className="text-xs text-gray-400 mb-1">账户余额</div>
               <div className="text-xl font-bold text-yellow-400 flex items-center justify-center gap-1.5">
                 {user.balance.toLocaleString()}
                 <GoldBean className="w-5 h-5" />
               </div>
             </div>
-            <div className="text-center px-6 py-3 bg-slate-200/50 rounded-xl border border-slate-700">
+            <div className="text-center px-6 py-3 bg-slate-200/50 rounded-xl ">
               <div className="text-xs text-gray-400 mb-1">保险柜</div>
               <div className="text-xl font-bold text-blue-400 flex items-center justify-center gap-1.5">
                 2,214,529
@@ -116,7 +116,7 @@ const ProfilePage = () => {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* Sidebar Navigation */}
           <div className="lg:col-span-1">
-            <nav className="bg-slate-100/50 border border-slate-800 rounded-xl overflow-hidden">
+            <nav className="bg-slate-100/50 rounded-xl overflow-hidden">
               {[
                 { id: 'overview', icon: User, label: '个人战绩' },
                 { id: 'wallet', icon: CreditCard, label: '我的钱包' },
@@ -155,7 +155,7 @@ const ProfilePage = () => {
 
           {/* Main Content Area */}
           <div className="lg:col-span-3">
-            <div className="bg-slate-100/50 border border-slate-800 rounded-xl p-6 min-h-[400px]">
+            <div className="bg-slate-100/50 rounded-xl p-6 min-h-[400px]">
               {activeTab === 'overview' && (
                 <div className="space-y-6">
                   <h2 className="text-xl font-bold text-black mb-4 flex items-center gap-2">
@@ -163,23 +163,23 @@ const ProfilePage = () => {
                   </h2>
 
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div className="bg-slate-200/50 p-4 rounded-xl border border-slate-700 text-center">
+                    <div className="bg-slate-200/50 p-4 rounded-xl  text-center">
                       <div className="text-slate-500 text-xs mb-1">今日流水</div>
                       <div className="text-xl font-bold text-black flex items-center justify-center gap-1">
                         12,500 <GoldBean className="w-4 h-4" />
                       </div>
                     </div>
-                    <div className="bg-slate-200/50 p-4 rounded-xl border border-slate-700 text-center">
+                    <div className="bg-slate-200/50 p-4 rounded-xl  text-center">
                       <div className="text-slate-500 text-xs mb-1">今日胜率</div>
                       <div className="text-xl font-bold text-black">68.5%</div>
                     </div>
-                    <div className="bg-slate-200/50 p-4 rounded-xl border border-slate-700 text-center">
+                    <div className="bg-slate-200/50 p-4 rounded-xl  text-center">
                       <div className="text-slate-500 text-xs mb-1">今日盈亏</div>
                       <div className="text-xl font-bold text-black flex items-center justify-center gap-1">
                         +2,580 <GoldBean className="w-4 h-4" />
                       </div>
                     </div>
-                    <div className="bg-slate-200/50 p-4 rounded-xl border border-slate-700 text-center">
+                    <div className="bg-slate-200/50 p-4 rounded-xl  text-center">
                       <div className="text-slate-500 text-xs mb-1">昨日盈亏</div>
                       <div className="text-xl font-bold text-black flex items-center justify-center gap-1">
                         -1,200 <GoldBean className="w-4 h-4" />
@@ -200,12 +200,12 @@ const ProfilePage = () => {
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                     {/* Balances Summary */}
                     <div className="space-y-4">
-                      <div className="bg-slate-200/30 border border-slate-800 rounded-2xl p-4 space-y-4">
+                      <div className="bg-slate-200/30 rounded-2xl p-4 space-y-4">
                         <h3 className="text-xs font-bold text-slate-300 border-l-4 border-yellow-500 pl-2">
                           资产概览
                         </h3>
                         <div className="grid grid-cols-1 gap-3">
-                          <div className="bg-slate-100/50 border border-slate-800 rounded-xl p-3 text-center">
+                          <div className="bg-slate-100/50 rounded-xl p-3 text-center">
                             <div className="text-[10px] text-slate-500 uppercase tracking-wider mb-1">
                               账户余额
                             </div>
@@ -213,7 +213,7 @@ const ProfilePage = () => {
                               2,214,529 <GoldBean className="w-4 h-4" />
                             </div>
                           </div>
-                          <div className="bg-slate-100/50 border border-slate-800 rounded-xl p-3 text-center">
+                          <div className="bg-slate-100/50 rounded-xl p-3 text-center">
                             <div className="text-[10px] text-slate-500 uppercase tracking-wider mb-1">
                               保险柜
                             </div>
@@ -226,8 +226,8 @@ const ProfilePage = () => {
                     </div>
 
                     {/* Transfer Action Card */}
-                    <div className="bg-slate-100 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl">
-                      <div className="flex border-b border-slate-800">
+                    <div className="bg-slate-100 rounded-2xl overflow-hidden shadow-2xl">
+                      <div className="flex">
                         <button
                           onClick={() => setTransferTab('deposit')}
                           className={`flex-1 py-2.5 text-xs font-bold transition-all ${transferTab === 'deposit' ? 'text-black bg-orange-600/20 border-b-2 border-orange-500' : 'text-slate-500 hover:text-slate-300'}`}
@@ -255,13 +255,13 @@ const ProfilePage = () => {
                           <input
                             type="text"
                             placeholder="请输入数量"
-                            className="w-full bg-slate-200/50 border border-slate-700 rounded-xl py-2 px-3 text-xs text-black placeholder:text-slate-600 focus:outline-hidden focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all"
+                            className="w-full bg-slate-200/50  rounded-xl py-2 px-3 text-xs text-black placeholder:text-slate-600 focus:outline-hidden focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all"
                           />
                           <div className="flex flex-wrap gap-1.5 pt-1">
                             {['全部', '1/2', '1/3', '1/4', '1/10'].map((label) => (
                               <button
                                 key={label}
-                                className="px-2 py-0.5 rounded-md bg-slate-200 hover:bg-slate-300 text-slate-400 text-[9px] border border-slate-700 transition-all"
+                                className="px-2 py-0.5 rounded-md bg-slate-200 hover:bg-slate-300 text-slate-400 text-[9px]  transition-all"
                               >
                                 {label}
                               </button>
@@ -277,7 +277,7 @@ const ProfilePage = () => {
                             <input
                               type="password"
                               placeholder="请输入安全密码"
-                              className="w-full bg-slate-200/50 border border-slate-700 rounded-xl py-2 px-3 text-xs text-black placeholder:text-slate-600 focus:outline-hidden focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all"
+                              className="w-full bg-slate-200/50  rounded-xl py-2 px-3 text-xs text-black placeholder:text-slate-600 focus:outline-hidden focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all"
                             />
                             <button className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-black transition-colors">
                               <Eye size={14} />
@@ -302,20 +302,20 @@ const ProfilePage = () => {
                     </h2>
                   </div>
 
-                  <div className="bg-slate-200/30 border border-slate-800 rounded-2xl p-6 space-y-6">
+                  <div className="bg-slate-200/30 rounded-2xl p-6 space-y-6">
                     {/* Search & Action Bar */}
                     <div className="flex flex-wrap gap-3 items-center">
                       <input
                         type="text"
                         placeholder="输入卡密查询"
-                        className="bg-slate-100 border border-slate-700 rounded-xl px-4 py-2 text-sm text-black focus:outline-hidden focus:border-blue-500 w-48"
+                        className="bg-slate-100  rounded-xl px-4 py-2 text-sm text-black focus:outline-hidden focus:border-blue-500 w-48"
                       />
                       <input
                         type="text"
                         placeholder="输入用户ID查询"
-                        className="bg-slate-100 border border-slate-700 rounded-xl px-4 py-2 text-sm text-black focus:outline-hidden focus:border-blue-500 w-48"
+                        className="bg-slate-100  rounded-xl px-4 py-2 text-sm text-black focus:outline-hidden focus:border-blue-500 w-48"
                       />
-                      <select className="bg-slate-100 border border-slate-700 rounded-xl px-4 py-2 text-sm text-black focus:outline-hidden focus:border-blue-500">
+                      <select className="bg-slate-100  rounded-xl px-4 py-2 text-sm text-black focus:outline-hidden focus:border-blue-500">
                         <option>全部状态</option>
                         <option>未使用</option>
                         <option>已使用</option>
@@ -332,7 +332,7 @@ const ProfilePage = () => {
                     </div>
 
                     {/* Card Table */}
-                    <div className="overflow-hidden rounded-xl border border-slate-800 bg-slate-100/50">
+                    <div className="overflow-hidden rounded-xl bg-slate-100/50">
                       <div className="overflow-x-auto">
                         <table className="w-full text-left text-sm">
                           <thead className="bg-slate-200/50 text-slate-500 uppercase tracking-wider">
@@ -345,7 +345,7 @@ const ProfilePage = () => {
                               <th className="p-2 whitespace-nowrap">获取时间</th>
                             </tr>
                           </thead>
-                          <tbody className="divide-y divide-slate-800">
+                          <tbody>
                             {[
                               {
                                 secret: '093160782516203',
@@ -417,7 +417,7 @@ const ProfilePage = () => {
                       <History className="text-yellow-500" size={20} /> 金豆记录
                     </h2>
                     <div className="flex items-center gap-3">
-                      <select className="bg-slate-200 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-black focus:outline-hidden focus:border-yellow-500">
+                      <select className="bg-slate-200  rounded-lg px-3 py-1.5 text-xs text-black focus:outline-hidden focus:border-yellow-500">
                         <option>所有类别</option>
                         <option>开通会员</option>
                         <option>使用豆卡</option>
@@ -437,7 +437,7 @@ const ProfilePage = () => {
                     </div>
                   </div>
 
-                  <div className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-100/50">
+                  <div className="overflow-hidden rounded-2xl bg-slate-100/50">
                     <div className="overflow-x-auto">
                       <table className="w-full text-left text-sm">
                         <thead className="bg-slate-200/50 text-slate-500 uppercase tracking-wider">
@@ -449,7 +449,7 @@ const ProfilePage = () => {
                             <th className="p-4 whitespace-nowrap">变化后金豆</th>
                           </tr>
                         </thead>
-                        <tbody className="divide-y divide-slate-800">
+                        <tbody>
                           {[
                             {
                               time: '2026-01-21 15:20:13',
@@ -485,8 +485,8 @@ const ProfilePage = () => {
                               className="hover:bg-slate-200/30 transition-colors text-slate-400"
                             >
                               <td className="p-4 font-mono text-slate-500">{record.time}</td>
-                              <td className="p-4">
-                                <span className="px-2 py-0.5 rounded-full bg-slate-200 border border-slate-700 text-slate-300">
+                              <td className="p-2">
+                                <span className="px-2 py-0.5 rounded-full bg-slate-200  text-slate-300">
                                   {record.type}
                                 </span>
                               </td>
@@ -503,10 +503,10 @@ const ProfilePage = () => {
                   </div>
 
                   <div className="flex justify-center gap-4 pt-2">
-                    <button className="px-6 py-1.5 rounded-lg bg-slate-200 text-slate-500 border border-slate-700 text-xs font-medium hover:bg-slate-300 transition-all">
+                    <button className="px-6 py-1.5 rounded-lg bg-slate-200 text-slate-500  text-xs font-medium hover:bg-slate-300 transition-all">
                       上一页
                     </button>
-                    <button className="px-6 py-1.5 rounded-lg bg-slate-200 text-slate-500 border border-slate-700 text-xs font-medium hover:bg-slate-300 transition-all">
+                    <button className="px-6 py-1.5 rounded-lg bg-slate-200 text-slate-500  text-xs font-medium hover:bg-slate-300 transition-all">
                       下一页
                     </button>
                   </div>
@@ -523,7 +523,7 @@ const ProfilePage = () => {
 
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                     {/* Login Password */}
-                    <div className="bg-slate-200/30 border border-slate-800 rounded-2xl p-4 space-y-4">
+                    <div className="bg-slate-200/30 rounded-2xl p-4 space-y-4">
                       <h3 className="text-xs font-bold text-slate-300 border-l-4 border-yellow-500 pl-2">
                         修改登录密码
                       </h3>
@@ -533,7 +533,7 @@ const ProfilePage = () => {
                           <input
                             type="password"
                             placeholder="请输入当前密码"
-                            className="w-full bg-slate-100 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-black focus:outline-hidden focus:border-yellow-500"
+                            className="w-full bg-slate-100  rounded-lg px-3 py-1.5 text-xs text-black focus:outline-hidden focus:border-yellow-500"
                           />
                         </div>
                         <div className="grid grid-cols-2 gap-2">
@@ -542,7 +542,7 @@ const ProfilePage = () => {
                             <input
                               type="password"
                               placeholder="新密码"
-                              className="w-full bg-slate-100 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-black focus:outline-hidden focus:border-yellow-500"
+                              className="w-full bg-slate-100  rounded-lg px-3 py-1.5 text-xs text-black focus:outline-hidden focus:border-yellow-500"
                             />
                           </div>
                           <div className="space-y-1">
@@ -550,7 +550,7 @@ const ProfilePage = () => {
                             <input
                               type="password"
                               placeholder="确认新密码"
-                              className="w-full bg-slate-100 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-black focus:outline-hidden focus:border-yellow-500"
+                              className="w-full bg-slate-100  rounded-lg px-3 py-1.5 text-xs text-black focus:outline-hidden focus:border-yellow-500"
                             />
                           </div>
                         </div>
@@ -561,7 +561,7 @@ const ProfilePage = () => {
                     </div>
 
                     {/* Transaction Password */}
-                    <div className="bg-slate-200/30 border border-slate-800 rounded-2xl p-4 space-y-4">
+                    <div className="bg-slate-200/30 rounded-2xl p-4 space-y-4">
                       <h3 className="text-xs font-bold text-slate-300 border-l-4 border-yellow-500 pl-2">
                         设置交易密码
                       </h3>
@@ -569,7 +569,7 @@ const ProfilePage = () => {
                         <div className="grid grid-cols-2 gap-2">
                           <div className="space-y-1">
                             <label className="text-[10px] text-slate-500 ml-1">手机号</label>
-                            <div className="bg-slate-100/50 border border-slate-800 rounded-lg px-3 py-1.5 text-xs text-slate-400 font-mono">
+                            <div className="bg-slate-100/50 rounded-lg px-3 py-1.5 text-xs text-slate-400 font-mono">
                               138****8888
                             </div>
                           </div>
@@ -579,7 +579,7 @@ const ProfilePage = () => {
                               <input
                                 type="password"
                                 placeholder="6位数字"
-                                className="w-full bg-slate-100 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-black focus:outline-hidden focus:border-yellow-500"
+                                className="w-full bg-slate-100  rounded-lg px-3 py-1.5 text-xs text-black focus:outline-hidden focus:border-yellow-500"
                               />
                               <button className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-500 hover:text-black">
                                 <Eye size={14} />
@@ -593,9 +593,9 @@ const ProfilePage = () => {
                             <input
                               type="text"
                               placeholder="短信验证码"
-                              className="flex-1 bg-slate-100 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-black focus:outline-hidden focus:border-yellow-500"
+                              className="flex-1 bg-slate-100  rounded-lg px-3 py-1.5 text-xs text-black focus:outline-hidden focus:border-yellow-500"
                             />
-                            <button className="px-3 py-1.5 bg-slate-200 border border-slate-700 rounded-lg text-[10px] text-slate-300 hover:text-black transition-colors whitespace-nowrap">
+                            <button className="px-3 py-1.5 bg-slate-200  rounded-lg text-[10px] text-slate-300 hover:text-black transition-colors whitespace-nowrap">
                               获取验证码
                             </button>
                           </div>
@@ -619,7 +619,7 @@ const ProfilePage = () => {
 
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                     {/* Profile Settings */}
-                    <div className="bg-slate-200/30 border border-slate-800 rounded-2xl p-4 space-y-4">
+                    <div className="bg-slate-200/30 rounded-2xl p-4 space-y-4">
                       <h3 className="text-xs font-bold text-slate-300 border-l-4 border-yellow-500 pl-2">
                         个人资料
                       </h3>
@@ -631,16 +631,16 @@ const ProfilePage = () => {
                               <input
                                 type="text"
                                 defaultValue={user.name}
-                                className="flex-1 bg-slate-100 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-black focus:outline-hidden focus:border-yellow-500"
+                                className="flex-1 bg-slate-100  rounded-lg px-3 py-1.5 text-xs text-black focus:outline-hidden focus:border-yellow-500"
                               />
-                              <button className="px-3 py-1.5 bg-slate-200 border border-slate-700 rounded-lg text-[10px] text-slate-300 hover:text-black transition-colors">
+                              <button className="px-3 py-1.5 bg-slate-200  rounded-lg text-[10px] text-slate-300 hover:text-black transition-colors">
                                 修改
                               </button>
                             </div>
                           </div>
                           <div className="space-y-1">
                             <label className="text-[10px] text-slate-500 ml-1">绑定手机</label>
-                            <div className="bg-slate-100/50 border border-slate-800 rounded-lg px-3 py-1.5 text-xs text-slate-400 font-mono">
+                            <div className="bg-slate-100/50 rounded-lg px-3 py-1.5 text-xs text-slate-400 font-mono">
                               138****8888
                             </div>
                           </div>
@@ -664,7 +664,7 @@ const ProfilePage = () => {
                     </div>
 
                     {/* Identity Verification */}
-                    <div className="bg-slate-200/30 border border-slate-800 rounded-2xl p-4 space-y-4">
+                    <div className="bg-slate-200/30 rounded-2xl p-4 space-y-4">
                       <h3 className="text-xs font-bold text-slate-300 border-l-4 border-yellow-500 pl-2">
                         实名认证
                       </h3>
@@ -674,7 +674,7 @@ const ProfilePage = () => {
                           <input
                             type="text"
                             placeholder="请输入您的真实姓名"
-                            className="w-full bg-slate-100 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-black focus:outline-hidden focus:border-yellow-500"
+                            className="w-full bg-slate-100  rounded-lg px-3 py-1.5 text-xs text-black focus:outline-hidden focus:border-yellow-500"
                           />
                         </div>
                         <div className="space-y-1">
@@ -683,7 +683,7 @@ const ProfilePage = () => {
                             <input
                               type="text"
                               placeholder="请输入18位身份证号码"
-                              className="flex-1 bg-slate-100 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-black focus:outline-hidden focus:border-yellow-500"
+                              className="flex-1 bg-slate-100  rounded-lg px-3 py-1.5 text-xs text-black focus:outline-hidden focus:border-yellow-500"
                             />
                             <button className="px-4 py-1.5 bg-blue-600 text-black rounded-lg text-[10px] font-bold hover:bg-blue-500 transition-colors">
                               提交

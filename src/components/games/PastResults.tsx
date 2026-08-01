@@ -37,20 +37,15 @@ const PastResults: React.FC<PastResultsProps> = ({
               <th className="p-4 whitespace-nowrap">参与</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-slate-800">
+          <tbody>
             {/* Upcoming Issues (Only on first page) */}
             {currentPage === 1 &&
               upcomingIssues.map((record, i) => (
-                <tr
-                  key={`upcoming-${i}`}
-                  className="hover:bg-slate-200/30 transition-colors text-slate-300"
-                >
+                <tr key={`upcoming-${i}`} className="transition-colors text-slate-400">
                   <td className="p-4 font-mono">{record.issue}</td>
-                  <td className="p-4 font-mono text-slate-400">{record.time}</td>
+                  <td className="p-4 font-mono">{record.time}</td>
                   <td className="p-4">
-                    <div className="flex items-center gap-2 text-slate-500 font-medium">
-                      等待解密
-                    </div>
+                    <div className="flex items-center gap-2 font-medium">等待解密</div>
                   </td>
                   <td className="p-4">
                     <div className="flex items-center gap-1 font-mono text-blue-300">
@@ -72,9 +67,9 @@ const PastResults: React.FC<PastResultsProps> = ({
               ))}
             {/* Past History */}
             {currentHistory.map((record, i) => (
-              <tr key={i} className="hover:bg-slate-200/30 transition-colors text-slate-300">
+              <tr key={i} className="ransition-colors text-slate-400">
                 <td className="p-4 font-mono">{record.issue}</td>
-                <td className="p-4 font-mono text-slate-400">{record.time}</td>
+                <td className="p-4 font-mono">{record.time}</td>
                 <td className="p-4">
                   <div className="flex items-center gap-2">
                     <span className="font-mono">{record.numbers.join('+')}=</span>
@@ -103,7 +98,7 @@ const PastResults: React.FC<PastResultsProps> = ({
                   </div>
                 </td>
                 <td className="p-4">
-                  <span className="px-3 py-1 rounded-full bg-slate-200 text-slate-500 text-xs border border-slate-700">
+                  <span className="px-3 py-1 rounded-full bg-slate-200 text-slate-500 text-xs">
                     {record.status}
                   </span>
                 </td>
@@ -114,7 +109,7 @@ const PastResults: React.FC<PastResultsProps> = ({
       </div>
 
       {/* Pagination */}
-      <div className="flex items-center justify-center gap-2 p-6 border-t border-slate-800">
+      <div className="flex items-center justify-center gap-2 p-6">
         <button
           onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))}
           disabled={currentPage === 1}
