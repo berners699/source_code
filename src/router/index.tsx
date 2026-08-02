@@ -1,5 +1,6 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom'
-import MainLayout from '@/components/MainLayout'
+import MainLayout from '@/layouts/MainLayout'
+import MobileLayout from '@/layouts/MobileLayout'
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
@@ -9,8 +10,8 @@ import MallPage from '@/pages/MallPage'
 import RankPage from '@/pages/RankPage'
 import ProfilePage from '@/pages/ProfilePage'
 import VIPPage from '@/pages/VIPPage'
-
 import InvitePage from '@/pages/InvitePage'
+import MobileLogin from '@/pages/MobileLogin'
 const router = createBrowserRouter([
   {
     path: '/',
@@ -47,6 +48,16 @@ const router = createBrowserRouter([
       {
         path: '/vip',
         element: <VIPPage />,
+      },
+    ],
+  },
+  {
+    path: '/m',
+    element: <MobileLayout />,
+    children: [
+      {
+        path: 'login',
+        element: <MobileLogin />,
       },
     ],
   },

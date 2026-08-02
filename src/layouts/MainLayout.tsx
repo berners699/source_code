@@ -4,7 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 const MainLayout: FC = () => {
   return (
-    <div className="min-h-screen bg-slate-50 text-white font-sans selection:bg-blue-500 selection:text-white flex flex-col">
+    <div className="min-h-screen bg-slate-50 text-white font-sans  selection:text-white flex flex-col">
       <Navbar />
       <main className="grow">
         <Outlet />

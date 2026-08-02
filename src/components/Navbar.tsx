@@ -91,7 +91,7 @@ const Navbar = () => {
                   </button>
                 </div>
               ) : (
-                <div className="flex items-center space-x-4 mr-[25px]">
+                <div className="flex items-center space-x-4 mr-6.25">
                   <button
                     onClick={() => {
                       setAuthMode('login')
