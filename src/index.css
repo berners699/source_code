@@ -53,8 +53,12 @@
 body {
   @apply bg-slate-50 text-white antialiased;
   /* Fixed minimum width to prevent content from shifting too much */
-  min-width: 1200px;
-  overflow-x: auto;
+}
+html,
+body,
+#root {
+  width: 100vw;
+  min-height: 100vh;
 }
 
 /* Custom Scrollbar */
