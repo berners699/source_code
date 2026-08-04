@@ -12,6 +12,8 @@ import ProfilePage from '@/pages/ProfilePage'
 import VIPPage from '@/pages/VIPPage'
 import InvitePage from '@/pages/InvitePage'
 import MobileLogin from '@/pages/MobileLogin'
+import MobileReg from '@/pages/MobileReg'
+import GoForgetPass from '@/pages/GoForgetPass'
 const router = createBrowserRouter([
   {
     path: '/',
@@ -58,6 +60,14 @@ const router = createBrowserRouter([
       {
         path: 'login',
         element: <MobileLogin />,
+      },
+      {
+        path: 'reg',
+        element: <MobileReg />,
+      },
+      {
+        path: 'goforgetpass',
+        element: <GoForgetPass />,
       },
     ],
   },
