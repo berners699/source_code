@@ -14,6 +14,9 @@ import InvitePage from '@/pages/InvitePage'
 import MobileLogin from '@/pages/MobileLogin'
 import MobileReg from '@/pages/MobileReg'
 import GoForgetPass from '@/pages/GoForgetPass'
+import MobileIndex from '@/pages/mobile/Index'
+import MobileShop from '@/pages/mobile/Shop'
+import MobileMe from '@/pages/mobile/Me'
 const router = createBrowserRouter([
   {
     path: '/',
@@ -68,6 +71,18 @@ const router = createBrowserRouter([
       {
         path: 'goforgetpass',
         element: <GoForgetPass />,
+      },
+      {
+        path: 'index',
+        element: <MobileIndex />,
+      },
+      {
+        path: 'shop',
+        element: <MobileShop />,
+      },
+      {
+        path: 'me',
+        element: <MobileMe />,
       },
     ],
   },
