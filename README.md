@@ -87,3 +87,28 @@ For more detailed project structure, tech stack, configuration instructions and 
 
 - 背景颜色 --bg-color ：#f8f8f8
 -
+
+天下会：https://tianxiahui.vip
+虾玩：https://xiawan.in
+集趣游：jiquyou.com
+天峰：http://119.96.123.195:1433/index.html#/
+
+石头岛：https://www.shitoudao.vip
+
+http://179.236.105.111/
+admin/Admin@123456
+管理后台地址
+
+http://179.236.105.111/swagger-ui/index.html
+接口文档地址
+
+服务器面板地址: http://179.236.105.111:8888/0b17ed91
+用户名: dl6wosbf
+密码: 9bfe6a68
+
+berners 你把你H5最终部署的 Origin 加入 CORS_ORIGINS，你到时候自己到面板上环境变量里改一下
+
+要做的工作：
+
+1. 前端地址：http://179.236.105.111:8088/games
+2.
